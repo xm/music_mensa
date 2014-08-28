@@ -1,0 +1,10 @@
+<div id="navigation">
+  <ul id="nav-list">
+    <% if logged_in? %>
+      <%= link_to '<li>Profile</li>'.html_safe, user_url(current_user) %>
+    <% else %>
+      <%= link_to '<li>Login</li>'.html_safe, login_url %>
+      <%= link_to '<li>Register</li>'.html_safe, register_url %>
+    <% end %>
+  </ul>
+</div>

@@ -11,3 +11,26 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  font-family: 'HelveticaNeue-Light', sans-serif;
+}
+
+body * {
+  /* background-color: hsla(0, 50%, 50%, 0.1) */
+}
+
+#navigation {
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+
+#navigation ul {
+  padding: 0px;
+  margin: 0;
+}
+
+#navigation li {
+  padding: 20px;
+  display: inline-block;
+}
