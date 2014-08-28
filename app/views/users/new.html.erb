@@ -1,0 +1,25 @@
+<h3>Register</h3>
+
+<ul>
+  <% flash[:errors].try(:each) do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ul>
+
+<form action="<%= register_url %>" method="post">
+  
+  <%= authenticity_token %>
+
+  <label>
+    Email:
+    <input type="text" name="user[email]" value="<%= @user.email %>">
+  </label>
+
+  <label>
+    Password:
+    <input type="password" name="user[password]">
+  </label>
+
+  <button>Register</button>
+
+</form>

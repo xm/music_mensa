@@ -1,0 +1,25 @@
+<h3>Login</h3>
+
+<ul>
+  <% flash[:errors].try(:each) do |error| %>
+  <li><%= error %></li>
+  <% end %>
+</ul>
+
+<form action="<%= login_url %>" method="post">
+  
+  <%= authenticity_token %>
+
+  <label>
+    Email:
+    <input type="text" name="session[email]">
+  </label>
+
+  <label>
+    Password:
+    <input type="password" name="session[password]">
+  </label>
+
+  <button>Login</button>
+
+</form>
