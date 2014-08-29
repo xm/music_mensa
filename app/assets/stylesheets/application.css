@@ -33,6 +33,8 @@ pre {
   font: inherit;
   line-height: 150%;
   margin: 0;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 .input-form {
@@ -191,4 +193,9 @@ ul#actions {
 #notes {
   padding: 20px;
   margin-top: -30px;
+}
+
+#note {
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }

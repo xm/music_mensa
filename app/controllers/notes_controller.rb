@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :require_login
-  before_action :validate_permission
+  before_action :validate_permission, only: [:delete]
 
   def create
     @note = Note.new(note_params)
