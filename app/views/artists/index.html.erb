@@ -2,9 +2,11 @@
   All Artists
 <% end %>
 
+<% if current_user.is_admin? %>
 <ul id="actions">
   <li><%= link_to "Add Artist", new_artist_url %></li>
 </ul>
+<% end %>
 
 <div id="artist-list">
   <% @artists.each do |artist| %>

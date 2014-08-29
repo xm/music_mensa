@@ -40,4 +40,8 @@ class User < ActiveRecord::Base
   def is_password?(password)
     BCrypt::Password.new(self.password_digest) == password
   end
+
+  def is_admin?
+    self.admin
+  end
 end

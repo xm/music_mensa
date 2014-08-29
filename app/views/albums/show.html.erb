@@ -4,11 +4,13 @@
   <%= @album.name %>
 <% end %>
 
+<% if current_user.is_admin? %>
 <ul id="actions">
   <li><%= link_to "Add Track", new_album_track_url(@album) %></li>
   <li><%= link_to "Edit", edit_album_url(@album) %></li>
   <li><%= button_to "Delete", album_url(@album), method: :delete %></li>
 </ul>
+<% end %>
 
 <div id="track-list">
   <div class="row">

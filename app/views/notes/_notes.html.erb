@@ -8,7 +8,7 @@
           <strong><%= note.author.email %></strong>
           on <em><%= note.authored_date %></em>
 
-          <% if note.author == current_user %>
+          <% if current_user.is_admin? || note.author == current_user %>
           <%= button_to "[delete]", note_url(note), method: :delete, form_class: 'delete' %>
           <% end %>
         </span>

@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   before_action :require_login
+  before_action :require_admin, except: [:index, :show]
 
   def index
     @artists = Artist.all.order(:name)

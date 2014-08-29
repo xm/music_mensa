@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
   before_action :require_login
+  before_action :requrie_admin, except: [:show]
 
   def new
     @artist = Artist.find(params[:artist_id])

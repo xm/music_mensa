@@ -2,11 +2,13 @@
   <%= @artist.name %>
 <% end %>
 
+<% if current_user.is_admin? %>
 <ul id="actions">
   <li><%= link_to "Add Album", new_artist_album_url(@artist) %></li>
   <li><%= link_to "Edit", edit_artist_url(@artist) %></li>
   <li><%= button_to "Delete", artist_url(@artist), method: :delete %></li>
 </ul>
+<% end %>
 
 <div id="album-list">
   <div class="row">

@@ -6,10 +6,12 @@
   <%= @track.display_name %>
 <% end %>
 
+<% if current_user.is_admin? %>
 <ul id="actions">
   <li><%= link_to "Edit", edit_track_url(@track) %></li>
   <li><%= button_to "Delete", track_url(@track), method: :delete %></li>
 </ul>
+<% end %>
 
 <div id="track-details">
   <div class="row">

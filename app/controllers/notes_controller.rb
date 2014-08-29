@@ -32,7 +32,7 @@ class NotesController < ApplicationController
   end
 
   def validate_permission
-    unless current_user == current_note.author
+    unless current_user == current_note.author || current_user.is_admin?
       redirect_to track_url(current_note.track)
     end
   end
