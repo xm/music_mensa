@@ -22,7 +22,8 @@ class Track < ActiveRecord::Base
     :notes,
     class_name: "Note",
     foreign_key: :track_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 
   def display_name
