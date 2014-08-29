@@ -1,0 +1,38 @@
+<% content_for :page_header do %>
+  <%= @track.display_name %>
+<% end %>
+
+<ul id="actions">
+  <li><%= link_to "Edit", edit_track_url(@track) %></li>
+  <li><%= button_to "Delete", track_url(@track), method: :delete %></li>
+</ul>
+
+<div id="track-details">
+  <div class="row">
+    <div class="small cell"><b>Artist</b></div>
+    <div class="greedy cell">
+      <%= link_to @track.artist.name, artist_url(@track.artist) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small cell"><b>Album</b></div>
+    <div class="greedy cell">
+      <%= link_to @track.album.name, album_url(@track.album) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small cell"><b>Number</b></div>
+    <div class="greedy cell">
+      <%= @track.number %> / <%= @track.album.tracks.count %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small cell"><b>Lyrics</b></div>
+    <div class="greedy cell">
+      <%= @track.lyrics ? @track.lyrics : "no lyrics to display" %>
+    </div>
+  </div>
+</div>

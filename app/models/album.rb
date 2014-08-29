@@ -1,5 +1,6 @@
 class Album < ActiveRecord::Base
-  validates :band_id, :name, :kind, presence: true
+  validates :artist_id, :name, :kind, presence: true
+  validates :kind, inclusion: AlbumsHelper.all_kinds
 
   belongs_to(
     :artist,
@@ -12,6 +13,7 @@ class Album < ActiveRecord::Base
     :tracks,
     class_name: "Track",
     foreign_key: :album_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 end

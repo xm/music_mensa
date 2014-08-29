@@ -2,10 +2,10 @@ class Track < ActiveRecord::Base
   validates :album_id, :name, :number, presence: true
   validates :album_id, uniqueness: { 
     scope: :number,
-    message: "can only exist once"
+    message: "track numbers can only exist once"
   }
 
-  belongs_to(
+  has_one(
     :artist,
     through: :album,
     source: :artist
@@ -17,4 +17,8 @@ class Track < ActiveRecord::Base
     foreign_key: :album_id,
     primary_key: :id
   )
+
+  def display_name
+    "#{ self.name }#{ " (Bonus Track)" if bonus }"
+  end
 end

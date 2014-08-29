@@ -1,0 +1,11 @@
+<% content_for :page_header do %>
+  Add Track
+<% end %>
+
+<%=
+  render partial: 'form', locals: {
+    action_url: tracks_url,
+    track: @track,
+    patch: false
+  }
+%>

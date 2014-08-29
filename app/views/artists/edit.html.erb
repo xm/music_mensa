@@ -1,0 +1,12 @@
+<% content_for :page_header do %>
+  Edit <%= @artist.name %>
+<% end %>
+
+<%=
+  render partial: 'form', locals: {
+    action_url: artist_url,
+    artist: @artist,
+    patch: true
+  }
+%>
+

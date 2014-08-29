@@ -1,0 +1,25 @@
+<% content_for :page_header do %>
+  <%= @album.name %> Tracks
+<% end %>
+
+<ul id="actions">
+  <li><%= link_to "Add Track", new_album_track_url(@album) %></li>
+  <li><%= link_to "Edit", edit_album_url(@album) %></li>
+  <li><%= button_to "Delete", album_url(@album), method: :delete %></li>
+</ul>
+
+<div id="track-list">
+  <div class="row">
+    <div class="small header">#</div>
+    <div class="greedy header">Name</div>
+  </div>
+
+  <% @tracks.each do |track| %>
+  <div class="row">
+    <div class="small cell" ><%= track.number %></div>
+    <div class="greedy cell">
+      <%= link_to track.display_name, track_url(track) %>
+    </div>
+  </div>
+  <% end %>
+</div>

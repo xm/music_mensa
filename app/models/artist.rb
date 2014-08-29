@@ -5,11 +5,12 @@ class Artist < ActiveRecord::Base
     :albums,
     class_name: "Album",
     foreign_key: :artist_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
   )
 
   has_many(
-    :track,
+    :tracks,
     through: :albums,
     source: :tracks
   )

@@ -1,0 +1,11 @@
+<% content_for :page_header do %>
+  Edit <%= @track.display_name %>
+<% end %>
+
+<%=
+  render partial: 'form', locals: {
+    action_url: track_url,
+    track: @track,
+    patch: true
+  }
+%>

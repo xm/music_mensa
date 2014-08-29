@@ -17,7 +17,21 @@ body {
 }
 
 body * {
-  /* background-color: hsla(0, 50%, 50%, 0.1) */
+/*  background-color: hsla(0, 50%, 50%, 0.1);  */
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  color: black;
+}
+
+#wrapper {
+  width: 800px;
+  margin: 0 auto;
 }
 
 #navigation {
@@ -26,11 +40,98 @@ body * {
 }
 
 #navigation ul {
-  padding: 0px;
+  padding: 0;
   margin: 0;
 }
 
 #navigation li {
   padding: 20px;
   display: inline-block;
+}
+
+#navigation input, #actions input {
+  display: inline;
+  background: none;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  color: blue;
+}
+
+#navigation input:hover, #actions input:hover {
+  color: black;
+}
+
+ul#actions {
+  padding: 0;
+  margin: -20px 0 10px 0;
+  font-size: 0.8em;
+}
+
+#actions li:after {
+  content: " / ";
+  margin: 0 6px 0 6px ;
+}
+
+#actions li:last-child:after {
+  content: "";
+}
+
+#actions * {
+  display: inline;
+}
+
+#artist-list {
+  height: 100%;
+  padding: 0px;
+  margin: 0 auto;
+}
+
+.artist {
+  display: inline-block;
+  background: hsla(200, 10%, 80%, 1);
+  height: 140px;
+  width: 140px;
+  margin: 5px;
+  border: solid 1px black;
+}
+
+.artist span {
+  position: relative;
+  top: 45%;
+  transform: translateY(-50%);
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+#album-list, #track-list {
+  width: 100%;
+  display: table;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: table-row;
+}
+
+.header {
+  background-color: hsla(200, 10%, 80%, 1);
+  font-weight: bold;
+  border-bottom: solid 1px black;
+}
+
+.cell, .header {
+  min-width: 120px;
+  padding: 5px;
+  display: table-cell;
+}
+
+.greedy {
+  width: 100%;
+}
+
+.small {
+  min-width: 75px;
 }

@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
-    user.is_password?(password) ? user : nil
+    user.try(:is_password?, password) ? user : nil
   end
 
   def self.generate_token

@@ -1,0 +1,11 @@
+<% content_for :page_header do %>
+  Add Artist
+<% end %>
+
+<%=
+  render partial: 'form', locals: {
+    action_url: artists_url,
+    artist: @artist,
+    patch: false
+  }
+%>

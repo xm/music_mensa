@@ -1,0 +1,12 @@
+<form action="<%= action_url %>" method="post">
+  <%= authenticity_token %>
+
+  <% if patch %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <label>Name</label>
+  <input type="text" name="artist[name]" value="<%= artist.name %>">
+
+  <button>Submit</button>
+</form>

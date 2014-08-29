@@ -1,0 +1,11 @@
+<% content_for :page_header do %>
+  Edit <%= @album.name %>
+<% end %>
+
+<%=
+  render partial: 'form', locals: {
+    action_url: album_url,
+    album: @album,
+    patch: true 
+  }
+%>

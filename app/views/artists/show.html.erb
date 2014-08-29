@@ -1,0 +1,27 @@
+<% content_for :page_header do %>
+  <%= @artist.name %>'s Albums
+<% end %>
+
+<ul id="actions">
+  <li><%= link_to "Add Album", new_artist_album_url(@artist) %></li>
+  <li><%= link_to "Edit", edit_artist_url(@artist) %></li>
+  <li><%= button_to "Delete", artist_url(@artist), method: :delete %></li>
+</ul>
+
+<div id="album-list">
+  <div class="row">
+    <div class="header">Release Date</div>
+    <div class="greedy header">Name</div>
+    <div class="header">Track Count</div>
+    <div class="header">Kind</div>
+  </div>
+
+  <% @albums.each do |album| %>
+  <div class="row">
+    <div class="cell"><%= album.release_date %></div>
+    <div class="greedy cell" ><%= link_to album.name, album_url(album) %></div>
+    <div class="cell"><%= album.tracks.count %></div>
+    <div class="cell"><%= album.kind %></div>
+  </div>
+  <% end %>
+</div>

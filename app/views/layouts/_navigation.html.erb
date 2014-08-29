@@ -1,10 +1,12 @@
 <div id="navigation">
   <ul id="nav-list">
     <% if logged_in? %>
-      <%= link_to '<li>Profile</li>'.html_safe, user_url(current_user) %>
+      <%= nav_item "Browse All Artists", artists_url %>
+      <%= nav_item "Your Profile", user_url(current_user) %>
+      <li><%= button_to "Logout", logout_url, method: :delete %></li>
     <% else %>
-      <%= link_to '<li>Login</li>'.html_safe, login_url %>
-      <%= link_to '<li>Register</li>'.html_safe, register_url %>
+      <%= nav_item "Login", login_url %>
+      <%= nav_item "Register", register_url %>
     <% end %>
   </ul>
 </div>

@@ -1,0 +1,21 @@
+<% content_for :page_header do %>
+  All Artists
+<% end %>
+
+<ul id="actions">
+  <li><%= link_to "Add Artist", new_artist_url %></li>
+</ul>
+
+<div id="artist-list">
+  <% @artists.each do |artist| %>
+    <a href="<%= artist_url(artist) %>">
+      <div class="artist">
+        <span>
+          <%= artist.name %>
+          <br>
+          <%= artist.albums.count %> album<%= 's' if artist.albums.count != 1 %>
+        </span>
+      </div>
+    </a>
+  <% end %>
+</div>

@@ -12,8 +12,8 @@ class SessionController < ApplicationController
     )
 
     if @user.nil?
-      flash[:errors] = ['Invalid email or password.']
-      redirect_to login_url
+      flash.now[:errors] = ['Invalid email or password.']
+      render :new
     else
       login_user!(@user)
       redirect_to user_url(@user)

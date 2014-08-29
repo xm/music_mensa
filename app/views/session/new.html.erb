@@ -1,10 +1,6 @@
-<h3>Login</h3>
-
-<ul>
-  <% flash[:errors].try(:each) do |error| %>
-  <li><%= error %></li>
-  <% end %>
-</ul>
+<% content_for :page_header do %>
+  Login
+<% end %>
 
 <form action="<%= login_url %>" method="post">
   
