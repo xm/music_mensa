@@ -2,20 +2,22 @@
   Register
 <% end %>
 
-<form action="<%= register_url %>" method="post">
+<form class="input-form" action="<%= register_url %>" method="post">
   
   <%= authenticity_token %>
 
-  <label>
-    Email:
+  <div>
+    <label>Email:</label>
     <input type="text" name="user[email]" value="<%= @user.email %>">
-  </label>
+  </div>
 
-  <label>
-    Password:
+  <div>
+    <label>Password:</label>
     <input type="password" name="user[password]">
-  </label>
+  </div>
 
-  <button>Register</button>
+  <div>
+    <button>Register</button>
+  </div>
 
 </form>

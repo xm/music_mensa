@@ -1,0 +1,13 @@
+<form class="input-form" action="<%= track_notes_url(@track) %>" method="post">
+  
+  <%= authenticity_token %>
+
+  <div>
+    <textarea name="note[content]"><%= note.content %></textarea>
+  </div>
+
+  <div>
+    <button>Post Note</button>
+  </div>
+
+</form>

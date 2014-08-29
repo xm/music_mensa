@@ -1,4 +1,6 @@
 MusicApp::Application.routes.draw do
+  root to: "artists#index"
+  
   resources :users, only: [:show]
 
   resources :artists do 
@@ -9,7 +11,10 @@ MusicApp::Application.routes.draw do
     resources :tracks, only: [:new]
   end
 
-  resources :tracks, except: [:index, :new]
+  resources :tracks, except: [:index, :new] do
+    resource :notes, only: [:create]
+  end
+
 
   get "register" => "users#new"
   post "register" => "users#create"

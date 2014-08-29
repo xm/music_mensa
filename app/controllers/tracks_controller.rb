@@ -18,6 +18,7 @@ class TracksController < ApplicationController
   end
 
   def edit
+    @album = current_track.album
     current_track
   end
 
@@ -30,6 +31,7 @@ class TracksController < ApplicationController
   end
 
   def show
+    @note = Note.new
     current_track
   end
 

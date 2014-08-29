@@ -1,30 +1,41 @@
-<form action="<%= action_url %>" method="post">
+<form class="input-form" action="<%= action_url %>" method="post">
   <%= authenticity_token %>
 
   <% if patch %>
     <input type="hidden" name="_method" value="PATCH">
   <% end %>
 
-  <label>Artist</label>
-  <select name="album[artist_id]">
-    <% Artist.all.each do |artist| %>
-    <option value="<%= artist.id %>" <%= "selected" if @artist == artist %>>
-      <%= artist.name %>
-    </option>
+  <div>
+    <label>Artist</label>
+    <select name="album[artist_id]">
+      <% Artist.all.each do |artist| %>
+      <option value="<%= artist.id %>" <%= "selected" if @artist == artist %>>
+        <%= artist.name %>
+      </option>
+      <% end %>
+    </select>
+  </div>
+
+  <div>
+    <label>Name</label>
+    <input type="text" name="album[name]" value="<%= album.name %>">
+  </div>
+
+  <div>
+    <label>Release Date</label>
+    <input type="date" name="album[release_date]" value="<%= album.release_date %>">
+  </div>
+
+  <div>
+    <label>Kind</label>
+    <% AlbumsHelper.all_kinds.each do |kind| %>
+      <input type="radio" name="album[kind]" value="<%= kind %>"
+      <%= album.kind == kind ? "checked" : "" %>>
+      <label><%= kind %></label>
     <% end %>
-  </select>
+  </div>
 
-  <label>Name</label>
-  <input type="text" name="album[name]" value="<%= album.name %>">
-
-  <label>Release Date</label>
-  <input type="date" name="album[release_date]" value="<%= album.release_date %>">
-
-  <label>Kind</label>
-  <% AlbumsHelper.all_kinds.each do |kind| %>
-    <input type="radio" name="album[kind]" value="<%= kind %>"
-      <%= album.kind == kind ? "checked" : "" %>><%= kind %>
-  <% end %>
-
-  <button>Submit</button>
+  <div>
+    <button>Submit</button>
+  </div>
 </form>

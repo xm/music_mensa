@@ -2,20 +2,22 @@
   Login
 <% end %>
 
-<form action="<%= login_url %>" method="post">
+<form class="input-form" action="<%= login_url %>" method="post">
   
   <%= authenticity_token %>
 
-  <label>
-    Email:
+  <div>
+    <label>Email:</label>
     <input type="text" name="session[email]">
-  </label>
+  </div>
 
-  <label>
-    Password:
+  <div>
+    <label>Password:</label>
     <input type="password" name="session[password]">
-  </label>
+  </div>
 
-  <button>Login</button>
+  <div>
+    <button>Login</button>
+  </div>
 
 </form>

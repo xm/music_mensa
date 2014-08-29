@@ -1,4 +1,8 @@
 <% content_for :page_header do %>
+  <%= link_to @track.artist.name, artist_url(@track.artist) %>
+  -
+  <%= link_to @track.album.name, album_url(@track.album) %>
+  -
   <%= @track.display_name %>
 <% end %>
 
@@ -32,7 +36,21 @@
   <div class="row">
     <div class="small cell"><b>Lyrics</b></div>
     <div class="greedy cell">
-      <%= @track.lyrics ? @track.lyrics : "no lyrics to display" %>
+      <pre><%= @track.lyrics ? @track.lyrics : "no lyrics to display" %></pre>
     </div>
   </div>
 </div>
+
+<h4>User Notes (<%= @track.notes.count %>)</h4>
+<div id="notes">
+  <% @track.notes.each do |note| %>
+    <div class="row">
+      <div class="greedy cell">
+        <b><%= note.author.email %></b><br>
+        <%= note.content %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= render partial: 'notes/form', locals: { note: @note } %>

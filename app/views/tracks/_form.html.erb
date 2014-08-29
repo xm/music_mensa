@@ -1,4 +1,4 @@
-<form action="<%= action_url %>" method="post">
+<form class="input-form" action="<%= action_url %>" method="post">
 
   <%= authenticity_token %>
 
@@ -6,26 +6,38 @@
     <input type="hidden" name="_method" value="PATCH">
   <% end %>
 
-  <label>Album</label>
-  <select name="track[album_id]">
-    <% Album.all.each do |album| %>
-    <option value="<%= album.id %>" <%= "selected" if @album == album %>>
-      <%= album.name %>
-    </option>
-    <% end %>
-  </select>
+  <div>
+    <label>Album</label>
+    <select name="track[album_id]">
+      <% Album.all.each do |album| %>
+      <option value="<%= album.id %>" <%= "selected" if @album == album %>>
+        <%= album.name %>
+      </option>
+      <% end %>
+    </select>
+  </div>
 
-  <label>Name</label>
-  <input type="text" name="track[name]" value="<%= track.name %>">
+  <div>
+    <label>Name</label>
+    <input type="text" name="track[name]" value="<%= track.name %>">
+  </div>
 
-  <label>Number</label>
-  <input type="text" name="track[number]" value="<%= track.number %>">
+  <div>
+    <label>Number</label>
+    <input type="text" name="track[number]" value="<%= track.number %>">
+  </div>
 
-  <label>Bonus Track?</label>
-  <input type="checkbox" name="track[bonus]" value="true"></input>
+  <div>
+    <label>Bonus Track?</label>
+    <input type="checkbox" name="track[bonus]" value="true"></input>
+  </div>
 
-  <label>Lyrics</label>
-  <textarea name="track[lyrics]"><%= track.lyrics %></textarea>
+  <div>
+    <label style="display: block; float: left">Lyrics</label>
+    <textarea name="track[lyrics]"><%= track.lyrics %></textarea>
+  </div>
 
-  <button>Submit</button>
+  <div>
+    <button>Submit</button>
+  </div>
 </form>

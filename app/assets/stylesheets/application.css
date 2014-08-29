@@ -29,6 +29,54 @@ a:hover {
   color: black;
 }
 
+pre {
+  font: inherit;
+  line-height: 150%;
+  margin: 0;
+}
+
+.input-form {
+  width: 500px;
+  padding: 10px;
+}
+
+.input-form textarea, .input-form label, .input-form input, .input-form button, 
+.input-form select {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 1.05em;
+}
+
+.input-form label {
+  min-width: 100px;
+}
+
+.input-form textarea {
+  display: block;
+  height: 100px;
+}
+
+.input-form select {
+  width: 385px;
+}
+
+.input-form input {
+  width: 370px;
+}
+
+.input-form input[type="radio"] {
+  width: 15px;
+}
+
+.input-form button {
+  padding: 5px 20px;
+}
+
+.input-form textarea {
+  width: 370px;
+}
+
 #wrapper {
   width: 800px;
   margin: 0 auto;
@@ -134,4 +182,9 @@ ul#actions {
 
 .small {
   min-width: 75px;
+}
+
+#notes {
+  padding: 20px;
+  margin-top: -30px;
 }

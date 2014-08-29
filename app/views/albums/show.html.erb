@@ -1,5 +1,7 @@
 <% content_for :page_header do %>
-  <%= @album.name %> Tracks
+  <%= link_to @album.artist.name, artist_url(@album.artist) %>
+  -
+  <%= @album.name %>
 <% end %>
 
 <ul id="actions">
