@@ -36,7 +36,7 @@
   <div class="row">
     <div class="small cell"><b>Lyrics</b></div>
     <div class="greedy cell">
-      <pre><%= @track.lyrics ? @track.lyrics : "no lyrics to display" %></pre>
+      <pre><%= ugly_lyrics(@track.lyrics) %></pre>
     </div>
   </div>
 </div>

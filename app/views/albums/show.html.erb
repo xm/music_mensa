@@ -18,7 +18,7 @@
 
   <% @tracks.each do |track| %>
   <div class="row">
-    <div class="small cell" ><%= track.number %></div>
+    <div class="small cell"><%= track.number %></div>
     <div class="greedy cell">
       <%= link_to track.display_name, track_url(track) %>
     </div>
