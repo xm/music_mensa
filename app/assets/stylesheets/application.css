@@ -199,3 +199,7 @@ ul#actions {
   word-wrap: break-word;
   white-space: pre-wrap;
 }
+
+.admin {
+  color: red;
+}

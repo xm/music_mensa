@@ -5,7 +5,9 @@
     <div class="row">
       <div class="greedy cell">
         <span>
-          <strong><%= note.author.email %></strong>
+          <strong <%= 'class="admin"'.html_safe if current_user.is_admin? %>>
+            <%= note.author.email %>
+          </strong>
           on <em><%= note.authored_date %></em>
 
           <% if current_user.is_admin? || note.author == current_user %>
