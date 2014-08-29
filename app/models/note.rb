@@ -14,4 +14,8 @@ class Note < ActiveRecord::Base
     foreign_key: :track_id,
     primary_key: :id
   )
+
+  def authored_date
+    self.created_at.strftime("%b. %e, %G at %r").downcase
+  end
 end

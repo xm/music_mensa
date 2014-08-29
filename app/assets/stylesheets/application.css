@@ -97,7 +97,7 @@ pre {
   display: inline-block;
 }
 
-#navigation input, #actions input {
+.delete input, #navigation input, #actions input {
   display: inline;
   background: none;
   border: 0;
@@ -105,6 +105,10 @@ pre {
   cursor: pointer;
   font: inherit;
   color: blue;
+}
+
+.delete, .delete div {
+  display: inline;
 }
 
 #navigation input:hover, #actions input:hover {

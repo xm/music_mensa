@@ -1,0 +1,21 @@
+<h4>User Notes (<%= notes.count %>)</h4>
+
+<div id="notes">
+  <% notes.each do |note| %>
+    <div class="row">
+      <div class="greedy cell">
+        <span>
+          <strong><%= note.author.email %></strong>
+          on <em><%= note.authored_date %></em>
+
+          <% if note.author == current_user %>
+          <%= button_to "[delete]", note_url(note), method: :delete, form_class: 'delete' %>
+          <% end %>
+        </span>
+
+        <p><%= note.content %></p>
+      </div>
+    </div>
+
+  <% end %>
+</div>

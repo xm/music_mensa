@@ -15,6 +15,8 @@ MusicApp::Application.routes.draw do
     resource :notes, only: [:create]
   end
 
+  resources :notes, only: [:destroy]
+
 
   get "register" => "users#new"
   post "register" => "users#create"

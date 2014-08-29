@@ -41,16 +41,5 @@
   </div>
 </div>
 
-<h4>User Notes (<%= @track.notes.count %>)</h4>
-<div id="notes">
-  <% @track.notes.each do |note| %>
-    <div class="row">
-      <div class="greedy cell">
-        <b><%= note.author.email %></b><br>
-        <%= note.content %>
-      </div>
-    </div>
-  <% end %>
-</div>
-
+<%= render partial: 'notes/notes', locals: { notes: @track.notes } %>
 <%= render partial: 'notes/form', locals: { note: @note } %>
