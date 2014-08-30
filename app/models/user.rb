@@ -44,4 +44,8 @@ class User < ActiveRecord::Base
   def is_admin?
     self.admin
   end
+
+  def most_recent_notes
+    notes.order(:created_at).limit(10)
+  end
 end

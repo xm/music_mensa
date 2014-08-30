@@ -1,3 +1,11 @@
 <% content_for :page_header do %>
-  <%= current_user.email %>
+  <%= @user.email %>'s profile
+<% end %>
+
+<h3>recent notes</h3>
+<% @user.most_recent_notes.try(:each) do |note| %>
+  <p>
+  <%= note.content %> on <strong><%= link_to note.track.name, track_url(note.track) %></strong>
+
+  </p>
 <% end %>
